@@ -8,7 +8,8 @@ import "./styles.scss";
 function App() {
 
   const PrivateRoute = ({component: Component, ...rest}) => (
-    <Route {...rest} render={props => localStorage.getItem("token") ? (<Component {...props} /> ) : (<Redirect to ="/" />)} />
+    <Route {...rest} render={props => 
+      localStorage.getItem("token") ? (<Component {...props} /> ) : (<Redirect to ="/" />)} />
   )
 
   return (
